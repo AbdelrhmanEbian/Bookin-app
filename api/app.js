@@ -13,7 +13,7 @@ app.use(uploader())
 app.use(express.json())
 app.use('/uploads',express.static(__dirname+'/uploads'))
 const corsOptions = {
-origin: 'http://localhost:5173',
+origin: 'https://booking-airbnb-clone-app.netlify.app',
     credentials: true, // Allow sending credentials
   }
   app.use(cors(corsOptions))
