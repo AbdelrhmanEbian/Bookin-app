@@ -31,13 +31,13 @@ function Home() {
     )
   }
   return (
-    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:.5}} className='grid grid-cols-5 max-sm:grid-cols-2 max-lg:grid-cols-3 gap-y-8 gap-x-3 rounded-2xl mt-8'>
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:.5}} className='grid pb-5 grid-cols-5 max-sm:grid-cols-2 max-lg:grid-cols-3 gap-y-8 gap-x-3 rounded-2xl mt-8'>
       {
         allplaces.length > 0 && allplaces.map((place)=>{
           return (
             <Link key={place._id} to={'/place/'+ place._id} className='bg-gray-100 pb-4  rounded-2xl '>
               <div className='h-40'>
-                <img className='w-full aspect-square h-full rounded-t-2xl' src={'http://localhost:3000/uploads/' + place.photos[0]} alt="" />
+                <img className='w-full aspect-square h-full rounded-t-2xl' src={'https://airbnb-clone-api-hdi4.onrender.com/uploads/' + place.photos[0]} alt="" />
               </div>
               <div className='px-2'>
 

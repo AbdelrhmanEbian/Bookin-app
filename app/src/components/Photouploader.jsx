@@ -33,7 +33,6 @@ function Photouploader({ setphotos, photos }) {
     const newphotos = photos.filter((photo) => photo !== photoLink);
     setphotos([photoLink,...newphotos]);
   }
-  const delay=(photos.length /2) + 2
   return (
     <>
       <div className="flex gap-2">
@@ -59,7 +58,7 @@ function Photouploader({ setphotos, photos }) {
               <motion.div animate={{opacity:1,x:0,display:"block"}} initial={{opacity:0,x:-100,display:'none'}} transition={{duration:2,delay,type:'spring',bounce:0.5}} className=" relative" key={photo}>
                 <img
                   className="flex w-full h-32  object-fill rounded-2xl"
-                  src={"http://localhost:3000/uploads/" + photo}
+                  src={"https://airbnb-clone-api-hdi4.onrender.com/uploads/" + photo}
                   alt=""
                 />
                 <div

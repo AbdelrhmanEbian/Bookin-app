@@ -12,11 +12,13 @@ import Places from "./components/Places";
 import SelectedPlace from "./components/SelectedPlace";
 import Bookingplaces from "./components/Bookingplaces";
 import Bookingplace from "./components/Bookingplace";
+import'./Index.css'
 import Getuser from "./components/Getuser";
 function App() {
-  axios.defaults.baseURL="http://localhost:3000"
+  const api = import.meta.env.VITE_REACT_APP_API;
+  axios.defaults.baseURL=api
   axios.defaults.withCredentials=true
-  const {user}=useSelector(state=>state.user)
+  const {user,loadinguser}=useSelector(state=>state.user)
   return (
     <div className="flex flex-col pt-2 px-4 overflow-x-hidden min-h-screen">
       <Getuser/>

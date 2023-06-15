@@ -58,7 +58,7 @@ if (bookings.length === 0 && loading === true) {
 
                         <Link   to={`/account/bookings/${booking._id}`} className='flex md:items-center max-sm:flex-col max-sm:gap-2  gap-4 my-5 bg-gray-200 rounded-2xl overflow-hidden'>
                             <div className=' w-64 lg:h-full max-sm:w-full' >
-                                <img className=' lg:h-full' src={`http://localhost:3000/uploads/${booking.place.photos[0]}`} alt="" />
+                                <img className=' lg:h-full' src={`https://airbnb-clone-api-hdi4.onrender.com/uploads/${booking.place.photos[0]}`} alt="" />
                             </div>
                             <div className='py-3 pr-3 max-sm:p-2 grow max-h-full'>
                                 <h2 className='text-xl truncate'>{booking.place.title}</h2>

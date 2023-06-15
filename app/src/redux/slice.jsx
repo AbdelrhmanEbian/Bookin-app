@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   user: {},
   places: [],
-  allplaces:[]
+  allplaces:[],
+  loadinguser:true
 };
 
 const mySlice = createSlice({
@@ -20,10 +21,13 @@ const mySlice = createSlice({
     setallplaces:(state,{payload})=>{
       state.allplaces = payload;
 
+    },
+    setloadinguser:(state)=>{
+      state.loadinguser=false
     }
   }
 });
 
-export const { setUser ,setplaces,setallplaces} = mySlice.actions;
+export const {setloadinguser, setUser ,setplaces,setallplaces} = mySlice.actions;
 
 export default mySlice.reducer;

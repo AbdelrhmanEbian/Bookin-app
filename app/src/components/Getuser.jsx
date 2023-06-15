@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { setUser } from '../redux/slice';
+import { setUser, setloadinguser } from '../redux/slice';
 
 function Getuser() {
     const dispatch= useDispatch()
@@ -15,9 +15,11 @@ function Getuser() {
         const  response = await axios.post('/auth/profile');
         dispatch(setUser(response.data))
         setuser(response.data)
+        dispatch(setloadinguser())
         setloading(true)
       } catch (error) {
         setloading(true)
+        dispatch(setloadinguser())
         nav('/')
       }
     }
