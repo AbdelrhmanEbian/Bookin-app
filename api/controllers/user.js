@@ -11,7 +11,7 @@ const register=async(req,res)=>{
         const hashedpassword=await bcrybt.hash(password,salt)
         const user =await User.create({name,email,password:hashedpassword})
         const token=await jwt.sign({email:email,id:user._id},process.env.TOKEN)
-        res.cookie(token).json({success:true})
+        res.cookie("token",token,{ secure: true }).json({success:true})
     }catch(error){
         res.status(422).json(error)
     }
@@ -26,7 +26,7 @@ const login=async(req,res)=>{
             return res.status(422).json("password is incorrect")
         }
         const token=await jwt.sign({email:email,id:user._id},process.env.TOKEN)
-        res.cookie("token",token).json(user)
+        res.cookie("token",token,{ secure: true }).json(user)
     } catch (error) {
         res.status(422).json("no email found")
     }
