@@ -13,7 +13,7 @@ const uploadmiddleware = async (req, res, next) => {
   
       await Promise.all(
         files.map(async (file,index) => {
-          const name = new Date().getTime() + '.jpeg';
+          const name = new Date().getTime() + '.jpg';
           await file.mv(`${__dirname}/../uploads/${name}`, function (err) {
             if (err) {
              throw new Error()
